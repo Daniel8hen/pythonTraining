@@ -63,15 +63,36 @@
 #Functions - when writing the func itself, first use *def*, then write the name,
 # then write a parameter
 # inside, no need for its type (as JAVA for example), then use semicolon
-def seconds_and_minutes_to_hours(minutes, seconds=3600):
-    return minutes / 60 + seconds / 3600
+# def seconds_and_minutes_to_hours(minutes, seconds=3600):
+#     return minutes / 60 + seconds / 3600
 # def seconds_to_hours(seconds):
 #     return seconds / 3600
 
 # default arg is passed only after the non default arg!
 # NoneType is the actual type in the memory of a function
-minutes = 120
-seconds = 7200
-print(seconds_and_minutes_to_hours(60))
+# minutes = 120
+# seconds = 7200
+# print(seconds_and_minutes_to_hours(60))
 # print("Number of hours for " + str(minutes_to_test) + " minutes in float is " + str(minutes_to_hours(minutes_to_test)))
 # print("Number of hours for " + str(seconds_to_test) + " seconds in float is " + str(seconds_to_hours(seconds_to_test)))
+
+# a func is some blue print in the memory until it is being called
+# def age_foo(age):
+#     return float(age) + 50
+#
+# age = input("What's your age?")
+# print(age_foo(age))
+# Exercise #1 - Celcius to Faren. function
+# def cel_to_faren(cel):
+#     faren = cel * (9/5) + 32
+#     return faren
+#
+# print (cel_to_faren(10))
+
+# Exercise #2 - a func that recevies a String, returns its length
+
+def str_len(str):
+    s = len(str)
+    return s
+
+print(str_len("Hey"))
