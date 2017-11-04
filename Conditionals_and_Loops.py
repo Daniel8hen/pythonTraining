@@ -52,4 +52,7 @@ def c_to_f(c):
 
 tempratrues = [10,-20, -289, 100]
 for i in tempratrues:
-    print(c_to_f(i))
+    with open("example2.txt","a+") as file:
+        file.write(str(c_to_f(i)) + "\n")
+        file.seek(0)
+        print(file.readlines())
