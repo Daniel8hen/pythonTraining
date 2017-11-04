@@ -8,5 +8,5 @@
 # print(os.__file__
 # we can use pip from the terminal and install other modules / libraries
 # package, module, library - all are actually the same (bunch of code from an external service)
-import glob2
-print(glob2.glob("*.txt"))
+# import glob2
+# print(glob2.glob("*.txt"))
