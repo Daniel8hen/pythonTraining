@@ -1,4 +1,3 @@
-
 #age = input("Enter your age: ")
 #new_age = float(age) + 50
 #print(new_age)
@@ -84,15 +83,20 @@
 # print(age_foo(age))
 # Exercise #1 - Celcius to Faren. function
 # def cel_to_faren(cel):
-#     faren = cel * (9/5) + 32
-#     return faren
+#     if cel < -273.15:
+#         return "celcius can't be that low"
+#     else:
+#         return cel * (9/5) + 32#
 #
-# print (cel_to_faren(10))
+# print (cel_to_faren(-271))
 
 # Exercise #2 - a func that recevies a String, returns its length
-
-def str_len(str):
-    s = len(str)
-    return s
-
-print(str_len("Hey"))
+# def str_len(str):
+#     if isinstance(str, int):
+#         return "Sorry integers don't have length"
+#     elif isinstance(str, float):
+#         return "Sorry floats don't have length"
+#     else:
+#         return len(str)
+#
+# print(str_len(10.0))
