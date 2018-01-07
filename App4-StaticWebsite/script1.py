@@ -9,8 +9,12 @@ app=Flask(__name__)
 @app.route('/')
 #function name - only one function (can't have two "home" functions)
 def home():
+    # in order to render, a page must be under a "templates" folder
     return render_template("home.html")
 
+@app.route('/about/')
+def about():
+    return render_template("about.html")
 
 if __name__== "__main__":
     # on first place - if it's imported from Flask - it will always be "__main__",
