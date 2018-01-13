@@ -33,4 +33,13 @@ if __name__== "__main__":
 # then, create a module for .exe scripts by "python -m venv virtual" inside the root folder!
 # then, install flask from root folder by using root's pip -
 # e.g. virtual\Scripts\pip install Flask (and not just pip install flask)
-# then, run the python script within the resources folder 
+# then, run the python script within the resources folder
+
+
+# App Deloyment
+# 1. install heroku if not installed
+# 2. Open cmd (regular) and cd to relevant root folder
+# 3. type "heroku login" and then login
+# 4. type "heroku create websiteDomainName" while websiteDomainName will be changed.
+# 5. upload files using git:
+# 6. we shall have three files - 1. requirements.txt - for libraries
