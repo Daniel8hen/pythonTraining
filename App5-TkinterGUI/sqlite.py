@@ -1,4 +1,4 @@
-import sqlite3
+import psycopg2
 
 # Steps to query DB:
 # 1. Connect to DB
