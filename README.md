@@ -7,3 +7,4 @@
 * Map - A map using Folium which shows interactive markers within it and has option to add / remove markers dynamically, using .csv reading file
 * Website blocker - an app that blocks websites during a specific timeframe (which can be changed) and running as a scheduler in the background
 * Website - a website that contains .html, .css files and based on a basic layout, using python. The app is deployed and seen live using Heroku.
+* Book Store - a DB application which contains information on books (id, title, author, year, ISBN), and can do several (DB) actions: insert, update, delete, selection
