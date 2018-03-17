@@ -17,13 +17,16 @@ while True:
 
     delta_frame = cv2.absdiff(first_frame,gray)
 
+    thresh_delta = cv2.threshold(delta_frame, 30, 255, cv2.THRESH_BINARY)[1]
+
     cv2.imshow("Gray Frame", gray)
     cv2.imshow("Delta Frame", delta_frame)
+    cv2.imshow("Threshold Frmae", thresh_delta)
 
     key = cv2.waitKey(1)
     print(gray)
     print(delta_frame)
-    
+
     if key == ord('q'):
         break
 
