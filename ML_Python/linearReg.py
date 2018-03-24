@@ -12,7 +12,7 @@ def compute_error_for_given_points(b, m, points):
 
 
 def step_gradient(current_b, current_m, points, learning_rate):
-    """ The gradient descent itself, works by the partial deriviative with respect to b, m """
+    """ The gradient descent itself, works by the partial deriviative with respect to b, m values """
     #gradient_descent
     b_gradient = 0
     m_gradient = 0
