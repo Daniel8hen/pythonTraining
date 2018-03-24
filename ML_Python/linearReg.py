@@ -2,6 +2,7 @@ from numpy import *
 
 
 def compute_error_for_given_points(b, m, points):
+    """A method to compute an error based on given points b, m, data(x, y pairs) """
     totalError = 0
     for i in range(0, len(points)):
         x = points[i, 0]
@@ -11,6 +12,7 @@ def compute_error_for_given_points(b, m, points):
 
 
 def step_gradient(current_b, current_m, points, learning_rate):
+    """ The gradient descent itself, works by the partial deriviative with respect to b, m """
     #gradient_descent
     b_gradient = 0
     m_gradient = 0
@@ -27,6 +29,7 @@ def step_gradient(current_b, current_m, points, learning_rate):
 
 
 def gradient_descent_runner(points, starting_b, starting_m, learning_rate, num_iterations):
+    """ An outer method for looping the gradient descent - 1000 times """
     b = starting_b
     m = starting_m
 
@@ -36,6 +39,7 @@ def gradient_descent_runner(points, starting_b, starting_m, learning_rate, num_i
 
 
 def run():
+    """ The main """
     points = genfromtxt('data.csv', delimiter=',')
     #hyperparameters
     learning_rate = 0.0001 #can be changed, how fast our model works (balance)
