@@ -8,3 +8,4 @@
 * Website blocker - an app that blocks websites during a specific timeframe (which can be changed) and running as a scheduler in the background
 * Website - a website that contains .html, .css files and based on a basic layout, using python. The app is deployed and seen live using Heroku.
 * Book Store - a DB application which contains information on books (id, title, author, year, ISBN), and can do several (DB) actions: insert, update, delete, selection
+* MotionDetection app - a motion detection application using the web camera which tracks an object within a webcam and tells us in an histogram how long was this object within it. 
