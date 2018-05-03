@@ -1,6 +1,6 @@
 # Python Applications
 
-## This repo presents applications that were created during Python self study
+## This repo presents applications that were created during Python self-study
 
 ### Applications:
 * Dynamic dictionary - an interactive dictionary using a .json file reading.
