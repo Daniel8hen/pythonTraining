@@ -9,3 +9,4 @@
 * Website - a website that contains .html, .css files and based on a basic layout, using python. The app is deployed and seen live using Heroku.
 * Book Store - a DB application which contains information on books (id, title, author, year, ISBN), and can do several (DB) actions: insert, update, delete, selection
 * MotionDetection app - a motion detection application using the web camera which tracks an object within a webcam and tells us in an histogram how long was this object within it. 
+* WebScrapper - A python script which extracts web pages data and saves it into a .csv file using BeautifulSoup and requests API.
