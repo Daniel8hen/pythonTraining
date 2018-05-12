@@ -25,8 +25,14 @@ def success():
         email = request.form["email_name"]
         height = request.form["height_name"]
         print(email, height)
-        return render_template("success.html")
-
+        #object from Data class
+        #first we'll check if there's that email already (since it needs to be unique)
+        if db.session.query(Data).filter(Data.email_==email).count() == 0:
+            data = Data(email, height)
+            db.session.add(data)
+            db.session.commit()
+            return render_template("success.html")
+    return render_template("index.html", text="Email address already exists")
 
 
 if __name__ == '__main__':
