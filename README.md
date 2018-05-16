@@ -11,3 +11,5 @@
 * MotionDetection app - a motion detection application using the web camera which tracks an object within a webcam and tells us in an histogram how long was this object within it. 
 * WebScrapper - A python script which extracts web pages data and saves it into a .csv file using BeautifulSoup and requests API.
 * Stock Data Visualization - A python jupyter notebook that gets 3rd party stock data and presents it in a bokeh candle chart.
+* DataCollector mini app - An app that has contains a form (UI), a backend (DB Model, calculations), and a DB, alongside an SMTP implementation. The app sends an email to a user based on a height form s/he had fiiled.
+* Geocoder service - A user uploads a .CSV that contains an address and gets its coordinates using geocoder in an .csv back
