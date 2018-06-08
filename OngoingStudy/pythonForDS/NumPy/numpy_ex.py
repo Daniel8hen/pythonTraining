@@ -13,18 +13,19 @@ import numpy as np
 # ten_to_fifty_arr = np.arange(10,51)
 # print(ten_to_fifty_arr)
 # # create arr of only even values from the above array
+# another way - np.arange(10,51,2)
 # print(ten_to_fifty_arr[ten_to_fifty_arr % 2 == 0])
 # 3x3 matrix
 # three_mat = np.arange(0,9).reshape(3,3)
 # print(three_mat)
 # identity 3x3 matrix - one argument for rows, columns
-# print(np.identity(3))
+# print(np.identity(3)) or np.eye(3)
 # random number between 0 and 1 using NumPy
 # print(np.random.rand(1))
 # 25 random numbers sampled from a standard normal distribution
 # print(np.random.randn(25))
 # 10x10 mat of values between 0.01 and 1
-# print(np.arange(0.01,1.01,0.01).reshape(10,10))
+# print(np.arange(0.01,1.01,0.01).reshape(10,10)) or np.linspace(0.01,1,100).reshape(10,10)
 # array of 20 linearly spaced points
 # print(np.linspace(0,1,20))
 
@@ -34,17 +35,17 @@ mat = np.arange(1,26).reshape(5,5)
 # print specific subset of this matrix (12 till the end...)
 #print(mat[2:,1:])
 # get 1 value - 20
-#print(mat[3:4,4:])
+# print(mat[3,4])
 # get 2,7,12
-# print(mat[:3,1:2])
+# print(mat[:3,1:2]) //if we'll use mat[:3,1] it'll return by a 1D array
 # get last line
 # print(mat[4:])
 # get two last lines
 # print(mat[3:])
 # sum of mat
-# print(mat.sum())
+# print(mat.sum()) //or np.sum(mat)
 # std of mat
-# print(mat.std())
+# print(mat.std()) //or np.std(mat)
 # sum of all columns
 # print(mat.sum(axis=0))
 # sum of all rows
