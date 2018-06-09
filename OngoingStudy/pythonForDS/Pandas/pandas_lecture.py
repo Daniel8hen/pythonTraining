@@ -35,7 +35,7 @@ from numpy.random import randn
 
 # *** DataFrames ***
 # np.random.seed(101)
-df = pd.DataFrame(randn(5,4),['A','B','C','D','E'],['W','X','Y','Z'])
+# df = pd.DataFrame(randn(5,4),['A','B','C','D','E'],['W','X','Y','Z'])
 # rand(5,4) for data, 'A' to 'E' for index, 'W' to 'Z' for columns
 # print(df) - all df
 # df - bunch of series that share the same index
@@ -45,11 +45,11 @@ df = pd.DataFrame(randn(5,4),['A','B','C','D','E'],['W','X','Y','Z'])
 # multiple columns - df is returned by calling df with a list:
 # print(df[['W','Z']])
 # creating/adding new column - can be defined as already exists
-df['new'] = df['W'] + df['Y']
+# df['new'] = df['W'] + df['Y']
 # print(df)
 # removing column by name using df.drop method - axis = 1 is a referer to the column (rather than indexes)
 # the inplace = True is for deleting the actual dataframe (and not only on the drop)
-df.drop('new', axis=1,inplace=True)
+# df.drop('new', axis=1,inplace=True)
 # print(df)
 # print(df.drop('E')) #without inplace
 # print(df.shape) # returnes 5,4 - index 0 = rows, index 1 = columns
@@ -59,3 +59,51 @@ df.drop('new', axis=1,inplace=True)
 # subset of rows, columns
 # print(df.loc['B','Y'])
 # print(df.loc[['A','B'],['W','Y']])
+
+# conditional selection
+# print(df > 0)
+# booldf = df > 0
+# print(df[booldf])
+# print(df)
+# print(df['W'] > 0)
+# print(df[df['W'] > 0])
+# print(df[df['W'] > 0]['X'])
+# multiple conditions
+# df[(df['W'] > 0) and (df['Y'] > 1)] # returns error - can't handle seris of bool and another series of bools
+# and can only deal with single bool values
+# print(df[(df['W'] > 0) & (df['Y'] > 1)]) - works well! for "or" - use | (1 pipe)
+# convention - (condition) & or | (condition)
+
+# print(df.reset_index()) #reset the index to another column, not inplace by default
+# print(df.set_index('X')) #set a specific column to be the index!
+# print(df)
+
+#index levels
+outside = ['G1','G1','G1','G2','G2','G2']
+inside = [1,2,3,1,2,3]
+hier_index = list(zip(outside,inside)) #list of tuples G1,1, G1,2, ...
+hier_index = pd.MultiIndex.from_tuples(hier_index)
+# now we see that we have multi level "hierarchy" index
+# df = pd.DataFrame(randn(6,2), hier_index, ['A','B'])
+# print(df)
+
+# print(df.loc['G1'].loc[1])
+# give high index names
+# df.index.names = ['Groups', 'Num']
+# print(df)
+# print(df.loc['G2'].loc[2]['B'])
+# another option of multi level index - for specific data - cross section of rows and columns
+# print(df.xs(1,level='Num')) # where level = Num is 1
+
+# *** Missing data ***
+d = {'A':[1,2,np.nan], 'B':[5,np.nan,np.nan], 'C':[1,2,3]}
+df = pd.DataFrame(d)
+# print(df)
+# Drop missing values
+# print(df.dropna()) # use axis = 1 for columns with no values
+# another argument is thresh
+# print(df.dropna(thresh=2))
+# fill missing values
+# print(df.fillna(value='FILL VALUE'))
+# fill values with mean - though there's a great philosophy of how to fill empty values
+print(df['A'].fillna(value=df['A'].mean()))
