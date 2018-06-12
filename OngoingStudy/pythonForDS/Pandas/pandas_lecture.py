@@ -79,10 +79,10 @@ from numpy.random import randn
 # print(df)
 
 #index levels
-outside = ['G1','G1','G1','G2','G2','G2']
-inside = [1,2,3,1,2,3]
-hier_index = list(zip(outside,inside)) #list of tuples G1,1, G1,2, ...
-hier_index = pd.MultiIndex.from_tuples(hier_index)
+# outside = ['G1','G1','G1','G2','G2','G2']
+# inside = [1,2,3,1,2,3]
+# hier_index = list(zip(outside,inside)) #list of tuples G1,1, G1,2, ...
+# hier_index = pd.MultiIndex.from_tuples(hier_index)
 # now we see that we have multi level "hierarchy" index
 # df = pd.DataFrame(randn(6,2), hier_index, ['A','B'])
 # print(df)
@@ -96,8 +96,8 @@ hier_index = pd.MultiIndex.from_tuples(hier_index)
 # print(df.xs(1,level='Num')) # where level = Num is 1
 
 # *** Missing data ***
-d = {'A':[1,2,np.nan], 'B':[5,np.nan,np.nan], 'C':[1,2,3]}
-df = pd.DataFrame(d)
+# d = {'A':[1,2,np.nan], 'B':[5,np.nan,np.nan], 'C':[1,2,3]}
+# df = pd.DataFrame(d)
 # print(df)
 # Drop missing values
 # print(df.dropna()) # use axis = 1 for columns with no values
@@ -106,4 +106,45 @@ df = pd.DataFrame(d)
 # fill missing values
 # print(df.fillna(value='FILL VALUE'))
 # fill values with mean - though there's a great philosophy of how to fill empty values
-print(df['A'].fillna(value=df['A'].mean()))
+# print(df['A'].fillna(value=df['A'].mean()))
+
+# **** GroupBy ****
+#
+# data = {'Company':['GOOG','GOOG','MSFT','MSFT','FB','FB'],
+#         'Person':['Sam', 'Charlie','Amy','Vanessa', 'Carl', 'Sarah'],
+#         'Sales':[200,120,340,124,243,350]}
+#
+# df = pd.DataFrame(data)
+# byComp = df.groupby('Company')
+# print(byComp.mean().loc['FB']) #ignore non numeric values - std(), mean(), sum() works as well
+# # one line - df.groupby('Company').count()
+# print(df.groupby('Company').describe().transpose())
+
+
+# *** Merging, joining and concatenating DFs ***
+# once we have separate DF's, we can use -
+# pd.concat([df1,df2,df3]) - pd.concat gets a list of DFs - we can use axis = 1 as a flag in the concat as well
+# and then we'll have NaNs since not all rows, columns had values (columnar concat)
+
+# merge - like merging in SQL (join) - merging two dataframes on specific key
+#pd.merge(left, right, how='inner', on='key') - like SQL inner join
+# we can use "on" on list of keys (not only 1 key), outer/right/left joins on "how"
+
+
+# joining - same as merge except the "keys" is the actual indexes
+
+# df1.join(df2) / df1.join(df2, how ='outer')
+
+# *** operations ***
+# find unique values - df['someCol'].unique() // nunique() - number of unique values
+# counts of unique values in a column - df['col'].value_counts()
+# apply method
+# def times(x):
+#     return x*2
+# apply is a powerful method for df['someCol'], and for lambda expressions
+# df['col'].apply(lambda x: x*2) - applies a custom expression on columns
+
+# df.drop('someCol', axis = 1, inplace=True) // for column
+# df.sort_values(by='col2') // df.sort_values('col2') - same same - will present df sorted by relevant col.
+# df.isnull() - returns DF for if the value is null or not
+# df.pivot_table(values='someCol', index=['A','B'], columns = ['C'])
