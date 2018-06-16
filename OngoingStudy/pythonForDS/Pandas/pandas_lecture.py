@@ -137,7 +137,7 @@ from numpy.random import randn
 
 # *** operations ***
 # find unique values - df['someCol'].unique() // nunique() - number of unique values
-# counts of unique values in a column - df['col'].value_counts()
+# counts of unique values in a column - df['col'].value_counts() // #.head(x where x is num of desired output)
 # apply method
 # def times(x):
 #     return x*2
