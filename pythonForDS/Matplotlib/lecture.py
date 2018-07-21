@@ -1,3 +1,4 @@
+# all three matplotlib lectures are within this file
 # most popular plotting lib for Python
 # gives control over every aspect of figure
 #matplotlib.org - official website with examples + code examples
