@@ -58,12 +58,28 @@ y = x ** 2
 # plt.show()
 # fig.savefig('myPic.png') #save figure to a file
 fig = plt.figure()
+# ax = fig.add_axes([0,0,1,1])
+# ax.plot(x,x**2, label='X Squared')
+# ax.plot(x,x**3, label='X Cubed')
+# ax.set_title('Title')
+# ax.set_xlabel('X')
+# ax.set_ylabel('Y')
+#
+# ax.legend(loc=0)
+# plt.show()
 ax = fig.add_axes([0,0,1,1])
-ax.plot(x,x**2, label='X Squared')
-ax.plot(x,x**3, label='X Cubed')
-ax.set_title('Title')
-ax.set_xlabel('X')
-ax.set_ylabel('Y')
-
-ax.legend(loc=0)
+ax.plot(x,y)
+#we can use...->
+# ax.plot(x,y,color='purple',lw=0.5, ls = '--', marker='o',markersize=20, markerfacecolor='yellow',
+# markeredgewidth=3,markeredgecolor='blue')
+ax.plot(x,y,color='purple',lw=2,ls='--')
+ax.set_xlim([0,1])
+ax.set_ylim([0,2])
 plt.show()
+# note: loria.fr has a good matplotlib tutorial
+# marker - marks 'x', 'y' point - more options in the documentation
+# use linestyle (or ls) to style the line in case needed
+#linewidth=20 - 20 times tickness of the default line - can type lw instead
+#alpha=0.5 - for transparency
+#can get RGB colors as well
+#settings colors in matplotlib
