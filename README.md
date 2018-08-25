@@ -2,6 +2,7 @@
 
 ## This repo presents applications that were created during Python self-study + self-study notes on python courses I have made
 
+* ML_Projects - a folder that contains ML portfolio projects (linear reg for now)
 ### Applications:
 * Dynamic dictionary - an interactive dictionary using a .json file reading.
 * Map - A map using Folium which shows interactive markers within it and has option to add / remove markers dynamically, using .csv reading file
